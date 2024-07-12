@@ -1,3 +1,5 @@
+import { validate } from "bycontract"
+
 export default class Usuario {
     #matricula;
     #nome;
@@ -7,6 +9,7 @@ export default class Usuario {
     #senha;
 
     constructor(matricula, nome, email, gestor, senha){
+        validate(arguments, ["Number", "String", "String", "String", "String"])
         this.#matricula = matricula;
         this.#nome = nome;
         this.#email = email;
